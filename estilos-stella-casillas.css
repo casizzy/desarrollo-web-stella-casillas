@@ -1,0 +1,72 @@
+h1 {
+    text-align: center;
+    padding: 20px 0 20px 20px;
+    color: #fff;
+}
+
+body,
+h2,
+h3,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-image: url(img/OIG.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #b88352;
+    border-color: #b88352;
+}
+
+.btn-primary:hover {
+    background-color: #794d24;
+    border-color: #794d24;
+}
+
+.btn-primary::after {
+    background-color: #794d24;
+    border-color: #794d24;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+#resultado {
+    margin-top: 30px;
+}
+
+.casillas {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+    .container {
+        margin-top: 20px;
+    }
+}

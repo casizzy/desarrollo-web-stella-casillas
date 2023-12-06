@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos-stella-casillas.css">
+    <title>Resultado de la Encuesta</title>
+</head>
+
+<body>
+
+    <div id="stella" class="container mt-5">
+        <h2>Datos de la encuesta</h2>
+        <div id="resultado"></div>
+        <div class="casillas">
+            <button class="btn btn-primary mt-3" onclick="regresarFormulario()">Regresar al Formulario</button>
+            <button class="btn btn-danger" onclick="borrarHistorial()">Borrar Historial</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script-stella-casillas.js"></script>
+    <script>
+        mostrarDatos();
+
+        function regresarFormulario() {
+            window.location.href = "encuesta-stella-casillas.html";
+        }
+    </script>
+
+</body>
+
+</html>

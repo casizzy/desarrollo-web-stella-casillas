@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos-stella-casillas.css">
+    <title>Encuesta Demográfica</title>
+</head>
+
+<body>
+    <h1>Encuesta Demográfica</h1>
+    <div class="container mt-5">
+        <form id="encuestaForm">
+            <div class="form-group">
+                <label for="edad">Edad:</label>
+                <input type="number" class="form-control" id="edad" required>
+            </div>
+            <div class="form-group">
+                <label for="sexo">Sexo:</label>
+                <select class="form-control" id="sexo" required>
+                    <option value="hombre">Hombre</option>
+                    <option value="mujer">Mujer</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="educacion">Nivel de Educación:</label>
+                <select class="form-control" id="educacion" required>
+                    <option value="preescolar">Preescolar</option>
+                    <option value="primaria">Primaria</option>
+                    <option value="secundaria">Secundaria</option>
+                    <option value="bachillerato">Bachillerato</option>
+                    <option value="universidad">Universidad</option>
+                    <option value="posgrado">Posgrado</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ocupacion">Ocupación:</label>
+                <input type="text" class="form-control" id="ocupacion" required>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="enviarDatos()">Enviar</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script-stella-casillas.js"></script>
+
+</body>
+
+</html>

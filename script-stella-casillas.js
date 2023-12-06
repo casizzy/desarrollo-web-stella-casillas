@@ -1,5 +1,19 @@
 var historialEncuestas = JSON.parse(localStorage.getItem('historialEncuestas')) || [];
 
+function validarFormulario() {
+    var edad = document.getElementById("edad").value;
+    var sexo = document.getElementById("sexo").value;
+    var educacion = document.getElementById("educacion").value;
+    var ocupacion = document.getElementById("ocupacion").value;
+
+    if (!edad || !sexo || !educacion || !ocupacion) {
+        alert("Por favor, responde a todos los campos del formulario.");
+        return false;
+    }
+
+    return true;
+}
+
 function enviarDatos() {
     var edad = document.getElementById("edad").value;
     var sexo = document.getElementById("sexo").value;
@@ -24,6 +38,12 @@ function enviarDatos() {
     document.getElementById("encuestaForm").reset();
 
     window.location.href = "resultado-stella-casillas.html";
+}
+
+function validarYEnviar() {
+    if (validarFormulario()) {
+        enviarDatos();
+    }
 }
 
 function mostrarDatos() {

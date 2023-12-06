@@ -17,9 +17,12 @@
         <div class="casillas">
             <button class="btn btn-primary mt-3" onclick="regresarFormulario()">Regresar al Formulario</button>
             <button class="btn btn-danger" onclick="borrarHistorial()">Borrar Historial</button>
+            <button class="btn btn-success" onclick="descargarResultados()">Descargar Resultados</button>
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.3/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -29,6 +32,17 @@
 
         function regresarFormulario() {
             window.location.href = "encuesta-stella-casillas.html";
+        }
+
+        function descargarResultados() {
+
+            var historialEncuestasGuardado = JSON.parse(localStorage.getItem('historialEncuestas')) || [];
+
+            var ws = XLSX.utils.json_to_sheet(historialEncuestasGuardado);
+            var wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, 'Encuestas');
+
+            XLSX.writeFile(wb, 'resultados_encuestas.xlsx');
         }
     </script>
 

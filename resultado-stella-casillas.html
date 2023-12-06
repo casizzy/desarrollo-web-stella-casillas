@@ -35,15 +35,44 @@
         }
 
         function descargarResultados() {
-
             var historialEncuestasGuardado = JSON.parse(localStorage.getItem('historialEncuestas')) || [];
 
-            var ws = XLSX.utils.json_to_sheet(historialEncuestasGuardado);
+            if (historialEncuestasGuardado.length === 0) {
+                alert("No hay datos de encuesta para descargar.");
+                return;
+            }
+
+            var encabezados = ["ID", "Edad", "Sexo", "Educación", "Ocupación"];
+            var datos = historialEncuestasGuardado.map(encuesta => [encuesta.id, encuesta.edad, encuesta.sexo, encuesta.educacion, encuesta.ocupacion]);
+
+            var wsData = [encabezados, ...datos];
+
+            var ws = XLSX.utils.aoa_to_sheet(wsData);
+
+            
+            var wscols = [
+                { wch: 5 },  
+                { wch: 10 }, 
+                { wch: 10 }, 
+                { wch: 10 }, 
+                { wch: 30 }, 
+            ];
+
+            
+            wscols.forEach((col, i) => {
+                ws['!cols'] = ws['!cols'] || [];
+                ws['!cols'][i] = col;
+            });
+
+                        
+            ws['A1'].s = { bold: true, fgColor: { rgb: "b88352" } };  
+
+
             var wb = XLSX.utils.book_new();
             XLSX.utils.book_append_sheet(wb, ws, 'Encuestas');
 
             XLSX.writeFile(wb, 'resultados_encuestas.xlsx');
-        }
+}
     </script>
 
 </body>

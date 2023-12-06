@@ -1,4 +1,6 @@
 var historialEncuestas = JSON.parse(localStorage.getItem('historialEncuestas')) || [];
+var idEncuesta = historialEncuestas.length + 1;
+
 
 function validarFormulario() {
     var edad = document.getElementById("edad").value;
@@ -21,7 +23,9 @@ function enviarDatos() {
     var ocupacion = document.getElementById("ocupacion").value;
 
 
+
     var datos = {
+        id: idEncuesta,
         edad: edad,
         sexo: sexo,
         educacion: educacion,
@@ -36,6 +40,8 @@ function enviarDatos() {
 
 
     document.getElementById("encuestaForm").reset();
+
+    idEncuesta++;
 
     window.location.href = "resultado-stella-casillas.html";
 }

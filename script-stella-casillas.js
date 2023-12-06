@@ -42,7 +42,7 @@ function mostrarDatos() {
     if (historialEncuestasGuardado.length > 0) {
         html += "<ul>";
         historialEncuestasGuardado.forEach(function(datos, index) {
-            html += "<li><strong>Encuesta " + (index + 1) + ":</strong> Edad: " + datos.edad + ", Sexo: " + datos.sexo + ", Educación: " + datos.educacion + ", Ocupación: " + datos.ocupacion + "</li>";
+            html += "<li><strong>Encuesta " + (index + 1) + ":</strong> <ul> <li> Edad: " + datos.edad + "</li>" + "<li> Sexo: " + datos.sexo + "</li>" + "<li> Educación: " + datos.educacion + "</li>" + "<li> Ocupación: " + datos.ocupacion + "</li>" + "</ul>" + "</li>";
         });
         html += "</ul>";
     } else {
